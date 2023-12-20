@@ -1,4 +1,4 @@
-window.addEventListener('scroll', function() { 
+window.addEventListener('scroll', function() {  
     var background = document.querySelector('.background-container');
     var scrollPercentage = window.scrollY / window.innerHeight;
     
