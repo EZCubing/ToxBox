@@ -92,23 +92,27 @@ h1, #email-form {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; /* Ensures modal is hidden initially */
+    position: fixed; /* Keeps the modal in place */
+    z-index: 10; /* Ensures modal is on top of other elements */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    overflow: auto; /* Allows scrolling */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 .modal-content {
     background-color: #000; /* Black background */
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: auto; /* Centered in the viewport */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: auto; /* Adjusts width automatically */
+    max-width: 300px; /* Maximum width */
+    text-align: center; /* Center the text inside the modal */
     border-radius: 10px; /* Curved edges */
     color: white; /* White text */
 }

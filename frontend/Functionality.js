@@ -2,28 +2,21 @@ window.addEventListener('scroll', function() {
     var background = document.querySelector('.background-container');
     var scrollPercentage = window.scrollY / window.innerHeight;
     
-    // Adjust the blur based on scroll percentage
     var blurValue = Math.max(0, 8 - scrollPercentage * 8);
     background.style.filter = `blur(${blurValue}px)`;
 }); 
 
 document.getElementById('email-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('Signup button clicked');
     var email = document.getElementById('email-input').value;
-
-    console.log(email);
     
-    // Validate email
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        // Show modal for invalid email
         showModal('Invalid Email Address');
         return;
     }
 
-    // Send POST request
-    fetch('http://localhost:3000/signup', {
+    fetch('https://tox-box.onrender.com/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -32,11 +25,9 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.message);
-        // Clear the input field
         document.getElementById('email-input').value = '';
-    })
-    .catch(error => console.error('Error:', error));
+        showModal(data.message);
+    }).catch(error => console.error('Error:', error));
 });
 
 function showModal(message) {
