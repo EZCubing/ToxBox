@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">      
+<head>    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sign-Up</title> 
+    <link rel="stylesheet" href="style.css">
+</head>    
+<body> 
+    <!-- Separate Blurred Background Container -->
+    <div class="background-container"></div>      
+ 
+    <!-- Landing Section with Sign-Up Form -->
+    <div class="landing" id="landing">
+        <div class="content"> 
+            <h1>Ready to reclaim your life and start a detox?</h1> 
+            <form id="email-form"> 
+                <input type="email" id="email-input" name="email" placeholder="Enter Email" required>
+                <button type="submit" id="signup-button">Sign Up Now</button>
+            </form> 
+        </div>        
+    </div>   
+
+    <!-- Placeholder for the Full Image Reveal Section -->
+    <div class="full-image" id="full-image">
+        <!-- The actual image will be set as a background in CSS -->
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Invalid Email Address</p>
+        </div>
+    </div> 
+
+    <!-- JavaScript to handle scrolling effects -->
+    <script src="Functionality.js"></script> 
+
+</body>
+</html>
